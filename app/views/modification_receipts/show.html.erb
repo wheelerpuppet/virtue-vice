@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>New points:</strong>
+  <%= @modification_receipt.new_points %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @modification_receipt.activity_id %>
+</p>
+
+<p>
+  <strong>Time stamp:</strong>
+  <%= @modification_receipt.time_stamp %>
+</p>
+
+<%= link_to 'Edit', edit_modification_receipt_path(@modification_receipt) %> |
+<%= link_to 'Back', modification_receipts_path %>

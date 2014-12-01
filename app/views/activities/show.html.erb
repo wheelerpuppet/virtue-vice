@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Verb:</strong>
+  <%= @activity.verb %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @activity.amount %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @activity.subject %>
+</p>
+
+<p>
+  <strong>Interval:</strong>
+  <%= @activity.interval %>
+</p>
+
+<p>
+  <strong>Relationship:</strong>
+  <%= @activity.relationship %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @activity.user_id %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @activity.points %>
+</p>
+
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>

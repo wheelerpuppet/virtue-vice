@@ -1,0 +1,29 @@
+<h1>Listing datum_receipts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Time stamp</th>
+      <th>Data</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @datum_receipts.each do |datum_receipt| %>
+      <tr>
+        <td><%= datum_receipt.amount %></td>
+        <td><%= datum_receipt.time_stamp %></td>
+        <td><%= datum_receipt.data_id %></td>
+        <td><%= link_to 'Show', datum_receipt %></td>
+        <td><%= link_to 'Edit', edit_datum_receipt_path(datum_receipt) %></td>
+        <td><%= link_to 'Destroy', datum_receipt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Datum receipt', new_datum_receipt_path %>

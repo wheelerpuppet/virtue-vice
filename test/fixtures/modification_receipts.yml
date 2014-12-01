@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  new_points: 1
+  activity_id: 1
+  time_stamp: 2014-12-01 13:45:44
+
+two:
+  new_points: 1
+  activity_id: 1
+  time_stamp: 2014-12-01 13:45:44

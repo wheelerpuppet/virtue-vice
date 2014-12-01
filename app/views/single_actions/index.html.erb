@@ -1,0 +1,33 @@
+<h1>Listing single_actions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Is complete</th>
+      <th>Due date</th>
+      <th>User</th>
+      <th>Points</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @single_actions.each do |single_action| %>
+      <tr>
+        <td><%= single_action.name %></td>
+        <td><%= single_action.is_complete %></td>
+        <td><%= single_action.due_date %></td>
+        <td><%= single_action.user_id %></td>
+        <td><%= single_action.points %></td>
+        <td><%= link_to 'Show', single_action %></td>
+        <td><%= link_to 'Edit', edit_single_action_path(single_action) %></td>
+        <td><%= link_to 'Destroy', single_action, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Single action', new_single_action_path %>

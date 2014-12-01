@@ -1,0 +1,2 @@
+module DatumReceiptsHelper
+end

@@ -1,0 +1,29 @@
+<h1>Listing modification_receipts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>New points</th>
+      <th>Activity</th>
+      <th>Time stamp</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @modification_receipts.each do |modification_receipt| %>
+      <tr>
+        <td><%= modification_receipt.new_points %></td>
+        <td><%= modification_receipt.activity_id %></td>
+        <td><%= modification_receipt.time_stamp %></td>
+        <td><%= link_to 'Show', modification_receipt %></td>
+        <td><%= link_to 'Edit', edit_modification_receipt_path(modification_receipt) %></td>
+        <td><%= link_to 'Destroy', modification_receipt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Modification receipt', new_modification_receipt_path %>

@@ -1,0 +1,29 @@
+<h1>Listing activity_receipts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Activity</th>
+      <th>Time stamp</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activity_receipts.each do |activity_receipt| %>
+      <tr>
+        <td><%= activity_receipt.amount %></td>
+        <td><%= activity_receipt.activity_id %></td>
+        <td><%= activity_receipt.time_stamp %></td>
+        <td><%= link_to 'Show', activity_receipt %></td>
+        <td><%= link_to 'Edit', edit_activity_receipt_path(activity_receipt) %></td>
+        <td><%= link_to 'Destroy', activity_receipt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Activity receipt', new_activity_receipt_path %>

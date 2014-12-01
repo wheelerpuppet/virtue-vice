@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @datum.label %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @datum.amount %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @datum.activity_id %>
+</p>
+
+<%= link_to 'Edit', edit_datum_path(@datum) %> |
+<%= link_to 'Back', data_path %>

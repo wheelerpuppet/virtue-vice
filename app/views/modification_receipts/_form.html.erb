@@ -1,0 +1,29 @@
+<%= form_for(@modification_receipt) do |f| %>
+  <% if @modification_receipt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@modification_receipt.errors.count, "error") %> prohibited this modification_receipt from being saved:</h2>
+
+      <ul>
+      <% @modification_receipt.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :new_points %><br>
+    <%= f.number_field :new_points %>
+  </div>
+  <div class="field">
+    <%= f.label :activity_id %><br>
+    <%= f.number_field :activity_id %>
+  </div>
+  <div class="field">
+    <%= f.label :time_stamp %><br>
+    <%= f.datetime_select :time_stamp %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

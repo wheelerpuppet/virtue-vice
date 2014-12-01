@@ -1,0 +1,37 @@
+<h1>Listing activities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Verb</th>
+      <th>Amount</th>
+      <th>Subject</th>
+      <th>Interval</th>
+      <th>Relationship</th>
+      <th>User</th>
+      <th>Points</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.verb %></td>
+        <td><%= activity.amount %></td>
+        <td><%= activity.subject %></td>
+        <td><%= activity.interval %></td>
+        <td><%= activity.relationship %></td>
+        <td><%= activity.user_id %></td>
+        <td><%= activity.points %></td>
+        <td><%= link_to 'Show', activity %></td>
+        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
+        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Activity', new_activity_path %>

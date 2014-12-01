@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @datum_receipt.amount %>
+</p>
+
+<p>
+  <strong>Time stamp:</strong>
+  <%= @datum_receipt.time_stamp %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @datum_receipt.data_id %>
+</p>
+
+<%= link_to 'Edit', edit_datum_receipt_path(@datum_receipt) %> |
+<%= link_to 'Back', datum_receipts_path %>
