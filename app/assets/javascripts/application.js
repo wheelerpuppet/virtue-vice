@@ -12,5 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require angular
+//= require angular-route
+
+//= require virtueViceApp
+
 //= require_tree .
+
+
+//= require_tree ./services
+//= require_tree ./controllers
+//= require_tree ./directives
+
+//= depend_on_asset_tree ./partials

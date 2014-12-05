@@ -1,6 +1,6 @@
-VirtueViceApp.factory("DashboardService", this.DashboardService = function($http, $rootScope) {
+VirtueViceApp.factory("DashboardService", this.DashboardService = function($http, $routeProvider) {
   return {
-    getUserDepartments : function(userId) {
+    getUserDepartments : function() {
       return $http.get(
         window.rootUrl + "/user/" + userId + "/departments").then(function(res) {
           return res.data;
