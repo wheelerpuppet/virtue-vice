@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201220241) do
+ActiveRecord::Schema.define(version: 20141205021856) do
 
   create_table "activities", force: true do |t|
     t.string   "verb"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20141201220241) do
     t.string   "description"
     t.integer  "value"
     t.datetime "deadline"
-    t.string   "type"
+    t.string   "category"
     t.integer  "author_id"
     t.integer  "recipient_id"
     t.datetime "created_at"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20141201220241) do
   end
 
   create_table "cards", force: true do |t|
-    t.string   "type"
+    t.string   "category"
     t.string   "description"
     t.integer  "value"
     t.datetime "date"
