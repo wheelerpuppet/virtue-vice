@@ -12,7 +12,7 @@ VirtueViceApp.config(function($routeProvider) {
 	return $routeProvider
 	.when("/taco", {
 		templateUrl: window.rootUrl + "/views/dashboard.html",
-		controller: "DashboardCtrlr"
+		controller: "DashboardCtrl"
 	}).otherwise({
 		redirectTo: "/"
 	});

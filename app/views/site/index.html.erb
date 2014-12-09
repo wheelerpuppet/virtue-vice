@@ -1,1 +1,71 @@
 site/index goes here!
+
+<% @users.each do |user| %>
+
+  <h1>
+    <%= user.display_name %>
+  </h1>
+  <div>
+    <%= user.login %>
+  </div>
+  <div>
+    <%= user.password %>
+  </div>
+
+  <h3>
+    Bounties Offered
+  </h3>
+  <% user.bounties_offered.each do |bounty| %>
+    <%= bounty.description %>
+  <% end %>
+
+  <h3>
+    Bounties Received
+  </h3>
+  <% user.bounties_received.each do |bounty| %>
+    <%= bounty.description %>
+  <% end %>
+
+  <h3>
+    Activities
+  </h3>
+  <% user.activities.each do |activity| %>
+    <%= activity.verb %>
+    <%= activity.amount %>
+    <%= activity.subject %>
+    <%= activity.interval %>
+    <%= activity.relationship %>
+    <%= activity.points %>
+  <% end %>
+
+  <h3>
+    Single Actions
+  </h3>
+  <% user.single_actions.each do |single_action| %>
+    <%= single_action.name %>
+    <%= single_action.is_complete %>
+    <%= single_action.due_date %>
+    <%= single_action.points %>
+  <% end %>
+
+  <h3>
+    Cards Offered
+  </h3>
+  <% user.cards_offered.each do |offered_card| %>
+    <%= offered_card.category %>
+    <%= offered_card.description %>
+    <%= offered_card.value %>
+    <%= offered_card.date %>
+  <% end %>
+
+  <h3>
+    Cards Received
+  </h3>
+  <% user.cards_received.each do |received_card| %>
+    <%= received_card.category %>
+    <%= received_card.description %>
+    <%= received_card.value %>
+    <%= received_card.date %>
+  <% end %>
+
+<% end %>
