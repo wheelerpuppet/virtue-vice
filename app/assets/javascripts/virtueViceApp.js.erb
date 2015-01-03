@@ -11,9 +11,14 @@ VirtueViceApp.config(includeCSRF);
 VirtueViceApp.config(function($routeProvider) {
 	return $routeProvider
 	.when("/taco", {
-		templateUrl: window.rootUrl + "/views/dashboard.html",
+		templateUrl: "/assets/partials/dashboard.html",
 		controller: "DashboardCtrl"
-	}).otherwise({
+	})
+	.when("/hotdog", {
+		templateUrl: "/assets/partials/hotdog.html",
+		controller: "DashboardCtrl"
+	})
+	.otherwise({
 		redirectTo: "/"
 	});
 });
