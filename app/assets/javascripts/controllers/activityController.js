@@ -1,12 +1,57 @@
 VirtueViceApp.controller('ActivityCtrl', this.ActivityCtrl = function($scope, $rootScope, ActivityService) {
 
-  $scope.user = [];
+  $scope.activites = [];
+  $scope.newActivityForm = "";
+  $scope.expandActivityForm = function() {
 
-  DashboardService.getUser(1).then(function(data) {
-    $scope.user = data;
-    console.log("Success retrieving user from server");
-    console.log(data);
-  }, function(data) {
-    console.log("Error retrieving user from server");
-  });
+    $('#newActivityForm').css('display', 'block');
+  };
+
+  // clear and hide form
+  $scope.collapseActivityForm = function() {
+
+    $scope.newActivityForm.verb = "";
+    $scope.newActivityForm.relationship = "";
+    $scope.newActivityForm.amount = "";
+    $scope.newActivityForm.subject = "";
+    $scope.newActivityForm.interval = "";
+
+    $('#newActivityForm').css('display', 'none');
+  };
+
+  $scope.submitActivityForm = function() {
+    ActivityService.addActivity($scope.newActivityForm).then(function(data) {
+      console.log("Success retrieving user from server");
+      $scope.updateActivities();
+      $scope.collapseActivityForm();
+    }), function(data) {
+      console.log("Error saving new Task on server");
+    };
+  };
+
+  $scope.updateActivities = function() {
+    ActivityService.getActivities().then(function(data) {
+      $scope.activities = data;
+      console.log("Success updating activities");
+      console.log(data);
+    }, function(data) {
+      console.log("Error updating activities");
+    });
+  };
+
+  $scope.deleteActivity = function(id) {
+    ActivityService.deleteActivity(id).then(function(data) {
+      console.log("Success removing Activity from server");
+      $scope.updateActivities();
+    }, function(data) {
+      console.log("id = " + id);
+      console.log("Error removing Activity from server");
+    });
+  };
+
+
+  // Initialization code
+
+  $scope.updateActivities();
+
 });

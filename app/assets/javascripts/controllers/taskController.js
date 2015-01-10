@@ -1,4 +1,4 @@
-VirtueViceApp.controller('TaskCtrl', this.TaskCtrl = function($scope, $rootScope, TaskService) {
+VirtueViceApp.controller('TaskCtrl', this.TaskCtrl = function($scope, $rootScope, TaskService, ActivityService) {
 
   $scope.tasks = [];
   $scope.newTaskForm = "";
@@ -34,10 +34,10 @@ VirtueViceApp.controller('TaskCtrl', this.TaskCtrl = function($scope, $rootScope
 
     TaskService.getTasks().then(function(data) {
       $scope.tasks = data;
-      console.log("Success retrieving user from server");
+      console.log("Success updating tasks");
       console.log(data);
     }, function(data) {
-      console.log("Error retrieving user from server");
+      console.log("Error updating tasks");
     });
   };
 

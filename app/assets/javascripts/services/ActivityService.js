@@ -1,10 +1,28 @@
 VirtueViceApp.factory("ActivityService", this.ActivityService = function($http) {
   return {
-    getUser : function(userId) {
+    getActivities : function() {
       return $http.get(
-        "/users/" + userId + ".json").then(function(res) {
+        "/activities.json").then(function(res) {
           return res.data;
         });
-      }
-    };
-  });
+      },
+
+      deleteActivity : function(id) {
+        return $http.delete(
+          "/activities/" + id).then(function(res) {
+            return res.data;
+          });
+        },
+
+        addActivity : function(newActivity) {
+          return $http.post(
+            "/activities", {verb: newActivity.verb,
+                            relationship: newActivity.relationship,
+                            amount: newActivity.amount,
+                            subject: newActivity.subject,
+                            interval: newActivity.interval}).then(function(res) {
+              return res.data;
+            });
+          }
+        };
+      });

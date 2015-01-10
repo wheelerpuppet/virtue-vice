@@ -43,9 +43,31 @@
 <div class="container">
   <!-- Example row of columns -->
   <div class="row">
-    <div class="col-md-4">
+
+    <div class="col-md-4" ng-controller="ActivityCtrl">
+
       <h2>Activities</h2>
-      <p><a class="btn btn-default" href="#" role="button">+</a></p>
+      <table class="table-bordered table-striped">
+        <tr ng-repeat="activity in activities">
+          <td>
+            <b>{{activity.verb}} {{activity.relationship}} {{activity.amount}} {{activity.subject}} {{activity.interval}} </b>
+            <a class="btn btn-default" href="#" role="button" ng-click="deleteActivity(activity.id)">-</a>
+          </td>
+        </tr>
+      </table>
+      <p><a class="btn btn-default" href="#" role="button" ng-click="expandActivityForm()">+</a></p>
+      <div id="newActivityForm">
+        Verb: <input type="text" id="verb" ng-model="newActivityForm.verb"> <br />
+        Relationship: <input type="text" id="relationship" ng-model="newActivityForm.relationship"> <br />
+        Amount: <input type="text" id="amount" ng-model="newActivityForm.amount"> <br />
+        Subject: <input type="text" id="subject" ng-model="newActivityForm.subject"> <br />
+        Interval: <input type="text" id="interval" ng-model="newActivityForm.interval"> <br />
+        <div>
+          <a class="btn btn-default btn-xs" href="#" role="button" ng-click="collapseActivityForm()">Cancel</a>
+          <a class="btn btn-primary btn-xs" href="#" role="button" ng-click="submitActivityForm()">Submit</a>
+        </div>
+      </div>
+
     </div>
 
     <div class="col-md-4" ng-controller="TaskCtrl">
@@ -64,7 +86,7 @@
       <p><a class="btn btn-default" href="#" role="button" ng-click="expandTaskForm()">+</a></p>
       <div id="newTaskForm">
         Name: <input type="text" id="name" ng-model="newTaskForm.name"> <br />
-        Due Date: <input type="text" id="duedate" ng-model="newTaskForm.duedate"> <br />
+        Due Date: <input type="text" id="duedate" ng-model="newTaskForm.duedate" placeholder="COMING SOON" disabled="disabled"> <br />
         Points: <input type="text" id="points" ng-model="newTaskForm.points"> <br />
         <div>
           <a class="btn btn-default btn-xs" href="#" role="button" ng-click="collapseTaskForm()">Cancel</a>
