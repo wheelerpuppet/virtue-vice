@@ -21,7 +21,7 @@ VirtueViceApp.controller('ActivityCtrl', this.ActivityCtrl = function($scope, $r
 
   $scope.submitActivityForm = function() {
     ActivityService.addActivity($scope.newActivityForm).then(function(data) {
-      console.log("Success retrieving user from server");
+      console.log("Success saving new Task on server");
       $scope.updateActivities();
       $scope.collapseActivityForm();
     }), function(data) {

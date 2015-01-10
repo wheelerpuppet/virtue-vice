@@ -1,9 +1,9 @@
 VirtueViceApp.controller('DashboardCtrl', this.DashboardCtrl = function($scope, $rootScope, DashboardService) {
 
-  $scope.user = [];
+  $rootScope.user = [];
 
   DashboardService.getUser(1).then(function(data) {
-    $scope.user = data;
+    $rootScope.user = data;
     console.log("Success retrieving user from server");
     console.log(data);
   }, function(data) {

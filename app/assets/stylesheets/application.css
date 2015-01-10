@@ -22,6 +22,10 @@
   display:none;
 }
 
+#newCardForm {
+  display:none;
+}
+
 #activities_section {
   background-color: #FFFFCC;
   margin-right: 15px;
@@ -35,6 +39,12 @@
 }
 
 #vices_section {
+  background-color: #F1CED5;
+  margin-right: 15px;
+  border: 1px solid #BA0C2F;
+}
+
+cardss_section {
   background-color: #F1CED5;
   margin-right: 15px;
   border: 1px solid #BA0C2F;

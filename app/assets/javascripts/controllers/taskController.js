@@ -1,4 +1,4 @@
-VirtueViceApp.controller('TaskCtrl', this.TaskCtrl = function($scope, $rootScope, TaskService, ActivityService) {
+VirtueViceApp.controller('TaskCtrl', this.TaskCtrl = function($scope, $rootScope, TaskService) {
 
   $scope.tasks = [];
   $scope.newTaskForm = "";
@@ -21,7 +21,7 @@ VirtueViceApp.controller('TaskCtrl', this.TaskCtrl = function($scope, $rootScope
   $scope.submitTaskForm = function() {
 
     TaskService.addTask($scope.newTaskForm).then(function(data) {
-      console.log("Success retrieving user from server");
+      console.log("Success saving new Task on server");
       $scope.updateTasks();
       $scope.collapseTaskForm();
     }), function(data) {
@@ -46,7 +46,6 @@ VirtueViceApp.controller('TaskCtrl', this.TaskCtrl = function($scope, $rootScope
       console.log("Success removing task from server");
       $scope.updateTasks();
     }, function(data) {
-      console.log("id = " + id);
       console.log("Error removing task from server");
     });
   };
