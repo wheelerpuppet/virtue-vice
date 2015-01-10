@@ -21,3 +21,28 @@
 #newActivityForm {
   display:none;
 }
+
+#activities_section {
+  background-color: #FFFFCC;
+  margin-right: 15px;
+  border: 1px solid #FFCD00;
+}
+
+#tasks_section {
+  background-color: #FFFFCC;
+  margin-right: 15px;
+  border: 1px solid #FFCD00;
+}
+
+#vices_section {
+  background-color: #F1CED5;
+  margin-right: 15px;
+  border: 1px solid #BA0C2F;
+}
+
+.table-striped > tbody > tr:nth-child(2n) > td, .table-striped > tbody > tr:nth-child(2n) > th {
+  background-color: #EEE9E9;
+
+.jumbotron {
+  background-color: white;
+}

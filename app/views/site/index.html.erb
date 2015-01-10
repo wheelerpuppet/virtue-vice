@@ -6,6 +6,7 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <form class="navbar-form navbar-right">
+        <span class="points-balance" style="color: white; margin-right: 10px;">Point Balance: 123</span>
         <div class="form-group">
           <input type="text" placeholder="Username" class="form-control">
         </div>
@@ -24,7 +25,7 @@
     <div class="row">
       <div class="col-md-4">
         <h2>Trends</h2>
-        <p><a class="btn btn-default" href="#" role="button">+</a></p>
+        <p><a class="btn btn-default" href="#" role="button">+</a></p> COMING SOON
       </div>
 
       <div class="col-md-4">
@@ -32,9 +33,9 @@
         <p><a class="btn btn-default" href="#" role="button">+</a></p>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-3">
         <h2>Bounties</h2>
-        <p><a class="btn btn-default" href="#" role="button">+</a></p>
+        <p><a class="btn btn-default" href="#" role="button">+</a></p> COMING SOON
       </div>
     </div>
   </div>
@@ -44,7 +45,7 @@
   <!-- Example row of columns -->
   <div class="row">
 
-    <div class="col-md-4" ng-controller="ActivityCtrl">
+    <div class="col-md-4" ng-controller="ActivityCtrl" id="activities_section">
 
       <h2>Activities</h2>
       <table class="table-bordered table-striped">
@@ -70,7 +71,7 @@
 
     </div>
 
-    <div class="col-md-4" ng-controller="TaskCtrl">
+    <div class="col-md-4" ng-controller="TaskCtrl" id="tasks_section">
       <h2>Tasks</h2>
       <table class="table-bordered table-striped">
         <tr ng-repeat="task in tasks">
@@ -93,13 +94,11 @@
           <a class="btn btn-primary btn-xs" href="#" role="button" ng-click="submitTaskForm()">Submit</a>
         </div>
       </div>
-
-    <div ng-show></div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-3" id="vices_section">
       <h2>Vices</h2>
-      <p><a class="btn btn-default" href="#" role="button">+</a></p>
+      <p><a class="btn btn-default" href="#" role="button">+</a></p> COMING SOON
     </div>
   </div>
 
