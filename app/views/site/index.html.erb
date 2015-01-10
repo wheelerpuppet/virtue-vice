@@ -53,7 +53,9 @@
       <table class="table-bordered table-striped">
         <tr ng-repeat="task in tasks">
           <td>
-            <b>{{task.name}}</b> <br />
+            <b>{{task.name}}</b>
+            <a class="btn btn-default" href="#" role="button" ng-click="deleteTask(task.id)">-</a>
+            <br />
             Points: {{task.points}} <br />
             Due Date: {{task.due_date}}
           </td>

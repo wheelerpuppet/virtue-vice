@@ -41,8 +41,19 @@ VirtueViceApp.controller('TaskCtrl', this.TaskCtrl = function($scope, $rootScope
     });
   };
 
+  $scope.deleteTask = function(id) {
+    TaskService.deleteTask(id).then(function(data) {
+      console.log("Success removing task from server");
+      $scope.updateTasks();
+    }, function(data) {
+      console.log("id = " + id);
+      console.log("Error removing task from server");
+    });
+  };
+
+
   // Initialization code
-  
+
   $scope.updateTasks();
 
 });

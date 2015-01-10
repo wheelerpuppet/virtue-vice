@@ -1,23 +1,23 @@
 Rails.application.routes.draw do
-  resources :comments
+  resources :comments, :defaults => { :format => :json }
 
-  resources :bounties
+  resources :bounties, :defaults => { :format => :json }
 
-  resources :cards
+  resources :cards, :defaults => { :format => :json }
 
-  resources :single_actions
+  resources :single_actions, :defaults => { :format => :json }
 
-  resources :datum_receipts
+  resources :datum_receipts, :defaults => { :format => :json }
 
-  resources :data
+  resources :data, :defaults => { :format => :json }
 
-  resources :modification_receipts
+  resources :modification_receipts, :defaults => { :format => :json }
 
-  resources :activity_receipts
+  resources :activity_receipts, :defaults => { :format => :json }
 
-  resources :activities
+  resources :activities, :defaults => { :format => :json }
 
-  resources :users
+  resources :users, :defaults => { :format => :json }
 
   root 'site#index'
   # The priority is based upon order of creation: first created -> highest priority.

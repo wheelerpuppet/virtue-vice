@@ -1,6 +1,6 @@
 class SingleActionsController < ApplicationController
   before_action :set_single_action, only: [:show, :edit, :update, :destroy]
-
+  respond_to :json
   # GET /single_actions
   # GET /single_actions.json
   def index
@@ -56,7 +56,6 @@ class SingleActionsController < ApplicationController
   def destroy
     @single_action.destroy
     respond_to do |format|
-      format.html { redirect_to single_actions_url, notice: 'Single action was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
