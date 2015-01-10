@@ -44,7 +44,7 @@
   border: 1px solid #BA0C2F;
 }
 
-cardss_section {
+#cards_section {
   background-color: #F1CED5;
   margin-right: 15px;
   border: 1px solid #BA0C2F;
@@ -52,7 +52,3 @@ cardss_section {
 
 .table-striped > tbody > tr:nth-child(2n) > td, .table-striped > tbody > tr:nth-child(2n) > th {
   background-color: #EEE9E9;
-
-.jumbotron {
-  background-color: white;
-}

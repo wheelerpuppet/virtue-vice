@@ -19,123 +19,123 @@
   </div>
 </nav>
 
-<!-- Main jumbotron -->
-<div class="jumbotron">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h2>Trends</h2>
-        <p><a class="btn btn-default" href="#" role="button">+</a></p> COMING SOON
-      </div>
-
-      <div class="col-md-4" ng-controller="CardCtrl" id="cards_section">
-        <h2>Cards</h2>
-        <table class="table-bordered table-striped">
-          <tr ng-repeat="card in cards">
-            <td>
-              <b>{{card.description}}</b>
-              <a class="btn btn-default" href="#" role="button" ng-click="deleteCard(card.id)">-</a>
-              <br />
-              {{card.value}} - {{card.category}}
-            </td>
-          </tr>
-        </table>
-        <p><a class="btn btn-default" href="#" role="button" ng-click="expandCardForm()">+</a></p>
-        <div id="newCardForm">
-          Description: <input type="text" id="name" ng-model="newCardForm.description"> <br />
-          Value: <input type="text" id="duedate" ng-model="newCardForm.value"> <br />
-          Category: <input type="text" id="points" ng-model="newCardForm.category"> <br />
-          Recipient_id: <input type="text" id="points" ng-model="newCardForm.recipient_id"> <br />
-
-          Author_id: <input type="text" id="points" ng-model="newCardForm.author_id"> <br />
-
-          <div>
-            <a class="btn btn-default btn-xs" href="#" role="button" ng-click="collapseCardForm()">Cancel</a>
-            <a class="btn btn-primary btn-xs" href="#" role="button" ng-click="submitCardForm()">Submit</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-        <h2>Bounties</h2>
-        <p><a class="btn btn-default" href="#" role="button">+</a></p> COMING SOON
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <!-- Example row of columns -->
+<div class="container main-view" style="padding-top: 65px;">
   <div class="row">
 
     <div class="col-md-4" ng-controller="ActivityCtrl" id="activities_section">
+      <div class="row">
 
-      <h2>Activities</h2>
-      <table class="table-bordered table-striped">
-        <tr ng-repeat="activity in activities">
-          <td>
-            <b>{{activity.verb}} {{activity.relationship}} {{activity.amount}} {{activity.subject}} {{activity.interval}} </b>
-            <a class="btn btn-default" href="#" role="button" ng-click="deleteActivity(activity.id)">-</a>
-          </td>
-        </tr>
-      </table>
-      <p><a class="btn btn-default" href="#" role="button" ng-click="expandActivityForm()">+</a></p>
-      <div id="newActivityForm">
-        Verb: <input type="text" id="verb" ng-model="newActivityForm.verb"> <br />
-        Relationship: <input type="text" id="relationship" ng-model="newActivityForm.relationship"> <br />
-        Amount: <input type="text" id="amount" ng-model="newActivityForm.amount"> <br />
-        Subject: <input type="text" id="subject" ng-model="newActivityForm.subject"> <br />
-        Interval: <input type="text" id="interval" ng-model="newActivityForm.interval"> <br />
-        <div>
-          <a class="btn btn-default btn-xs" href="#" role="button" ng-click="collapseActivityForm()">Cancel</a>
-          <a class="btn btn-primary btn-xs" href="#" role="button" ng-click="submitActivityForm()">Submit</a>
+        <div class="col-md-11">
+          <h2>Activities</h2>
+          <table class="table-bordered table-striped">
+            <tr ng-repeat="activity in activities">
+              <td>
+                <b>{{activity.verb}} {{activity.relationship}} {{activity.amount}} {{activity.subject}} {{activity.interval}} </b>
+                <a class="btn btn-default" href="#" role="button" ng-click="deleteActivity(activity.id)">-</a>
+              </td>
+            </tr>
+          </table>
+          <p><a class="btn btn-default" href="#" role="button" ng-click="expandActivityForm()">+</a></p>
+          <div id="newActivityForm">
+            Verb: <input type="text" id="verb" ng-model="newActivityForm.verb"> <br />
+            Relationship: <input type="text" id="relationship" ng-model="newActivityForm.relationship"> <br />
+            Amount: <input type="text" id="amount" ng-model="newActivityForm.amount"> <br />
+            Subject: <input type="text" id="subject" ng-model="newActivityForm.subject"> <br />
+            Interval: <input type="text" id="interval" ng-model="newActivityForm.interval"> <br />
+            <div>
+              <a class="btn btn-default btn-xs" href="#" role="button" ng-click="collapseActivityForm()">Cancel</a>
+              <a class="btn btn-primary btn-xs" href="#" role="button" ng-click="submitActivityForm()">Submit</a>
+            </div>
+          </div>
+        </div><!-- closing top box on first column -->
+
+        <div class="col-md-11" ng-controller="TaskCtrl" id="tasks_section">
+          <h2>Tasks</h2>
+          <table class="table-bordered table-striped">
+            <tr ng-repeat="task in tasks">
+              <td>
+                <b>{{task.name}}</b>
+                <a class="btn btn-default" href="#" role="button" ng-click="deleteTask(task.id)">-</a>
+                <br />
+                Points: {{task.points}} <br />
+                Due Date: {{task.due_date}}
+              </td>
+            </tr>
+          </table>
+          <p><a class="btn btn-default" href="#" role="button" ng-click="expandTaskForm()">+</a></p>
+          <div id="newTaskForm">
+            Name: <input type="text" id="name" ng-model="newTaskForm.name"> <br />
+            Due Date: <input type="text" id="duedate" ng-model="newTaskForm.duedate" placeholder="COMING SOON" disabled="disabled"> <br />
+            Points: <input type="text" id="points" ng-model="newTaskForm.points"> <br />
+            <div>
+              <a class="btn btn-default btn-xs" href="#" role="button" ng-click="collapseTaskForm()">Cancel</a>
+              <a class="btn btn-primary btn-xs" href="#" role="button" ng-click="submitTaskForm()">Submit</a>
+            </div>
+          </div>
+        </div><!-- closing bottom box on first column -->
+
+      </div>
+    </div> <!-- closing first column -->
+
+    <div class="col-md-4">
+      <div class="row">
+
+        <div class="col-md-11">
+          <h2>Trends</h2>
+          <p><a class="btn btn-default" href="#" role="button">+</a></p> COMING SOON
+        </div>
+
+        <div class="col-md-11" ng-controller="CardCtrl" id="cards_section">
+          <h2>Cards</h2>
+          <table class="table-bordered table-striped">
+            <tr ng-repeat="card in cards">
+              <td>
+                <b>{{card.description}}</b>
+                <a class="btn btn-default" href="#" role="button" ng-click="deleteCard(card.id)">-</a>
+                <br />
+                {{card.value}} - {{card.category}}
+              </td>
+            </tr>
+          </table>
+          <p><a class="btn btn-default" href="#" role="button" ng-click="expandCardForm()">+</a></p>
+          <div id="newCardForm">
+            Description: <input type="text" id="name" ng-model="newCardForm.description"> <br />
+            Value: <input type="text" id="duedate" ng-model="newCardForm.value"> <br />
+            Category: <input type="text" id="points" ng-model="newCardForm.category"> <br />
+            Recipient_id: <input type="text" id="points" ng-model="newCardForm.recipient_id"> <br />
+
+            Author_id: <input type="text" id="points" ng-model="newCardForm.author_id"> <br />
+
+            <div>
+              <a class="btn btn-default btn-xs" href="#" role="button" ng-click="collapseCardForm()">Cancel</a>
+              <a class="btn btn-primary btn-xs" href="#" role="button" ng-click="submitCardForm()">Submit</a>
+            </div>
+
+          </div>
         </div>
       </div>
+    </div> <!-- closing second column  -->
 
-    </div>
+    <div class="col-md-3">
+      <div class="row">
 
-    <div class="col-md-4" ng-controller="TaskCtrl" id="tasks_section">
-      <h2>Tasks</h2>
-      <table class="table-bordered table-striped">
-        <tr ng-repeat="task in tasks">
-          <td>
-            <b>{{task.name}}</b>
-            <a class="btn btn-default" href="#" role="button" ng-click="deleteTask(task.id)">-</a>
-            <br />
-            Points: {{task.points}} <br />
-            Due Date: {{task.due_date}}
-          </td>
-        </tr>
-      </table>
-      <p><a class="btn btn-default" href="#" role="button" ng-click="expandTaskForm()">+</a></p>
-      <div id="newTaskForm">
-        Name: <input type="text" id="name" ng-model="newTaskForm.name"> <br />
-        Due Date: <input type="text" id="duedate" ng-model="newTaskForm.duedate" placeholder="COMING SOON" disabled="disabled"> <br />
-        Points: <input type="text" id="points" ng-model="newTaskForm.points"> <br />
-        <div>
-          <a class="btn btn-default btn-xs" href="#" role="button" ng-click="collapseTaskForm()">Cancel</a>
-          <a class="btn btn-primary btn-xs" href="#" role="button" ng-click="submitTaskForm()">Submit</a>
+        <div class="col-md-11">
+          <h2>Bounties</h2>
+          <p><a class="btn btn-default" href="#" role="button">+</a></p> COMING SOON
+        </div>
+
+        <div class="col-md-11" id="vices_section">
+          <h2>Vices</h2>
+          <p><a class="btn btn-default" href="#" role="button">+</a></p> COMING SOON
         </div>
       </div>
-    </div>
+    </div><!-- closing third column -->
 
-    <div class="col-md-3" id="vices_section">
-      <h2>Vices</h2>
-      <p><a class="btn btn-default" href="#" role="button">+</a></p> COMING SOON
-    </div>
-  </div>
-
-  <hr>
-
-  <footer>
-    <p>&copy; 5or10 Studios 2014</p>
-  </footer>
+  </div> <!-- /row -->
 </div> <!-- /container -->
 
 
 <h1>SCRAPS BELOW HERE</h1>
-
-<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
 
 <div ng-controller="DashboardCtrl">
 site/index goes here!
@@ -146,75 +146,3 @@ site/index goes here!
 <div ng-view></div>
 
 </div>
-
-
-
-<% @users.each do |user| %>
-
-  <h1>
-    <%= user.display_name %>
-  </h1>
-  <div>
-    <%= user.login %>
-  </div>
-  <div>
-    <%= user.password %>
-  </div>
-
-  <h3>
-    Bounties Offered
-  </h3>
-  <% user.bounties_offered.each do |bounty| %>
-    <%= bounty.description %>
-  <% end %>
-
-  <h3>
-    Bounties Received
-  </h3>
-  <% user.bounties_received.each do |bounty| %>
-    <%= bounty.description %>
-  <% end %>
-
-  <h3>
-    Activities
-  </h3>
-  <% user.activities.each do |activity| %>
-    <%= activity.verb %>
-    <%= activity.amount %>
-    <%= activity.subject %>
-    <%= activity.interval %>
-    <%= activity.relationship %>
-    <%= activity.points %>
-  <% end %>
-
-  <h3>
-    Single Actions
-  </h3>
-  <% user.single_actions.each do |single_action| %>
-    <%= single_action.name %>
-    <%= single_action.is_complete %>
-    <%= single_action.due_date %>
-    <%= single_action.points %>
-  <% end %>
-
-  <h3>
-    Cards Offered
-  </h3>
-  <% user.cards_offered.each do |offered_card| %>
-    <%= offered_card.category %>
-    <%= offered_card.description %>
-    <%= offered_card.value %>
-    <%= offered_card.date %>
-  <% end %>
-
-  <h3>
-    Cards Received
-  </h3>
-  <% user.cards_received.each do |received_card| %>
-    <%= received_card.category %>
-    <%= received_card.description %>
-    <%= received_card.value %>
-    <%= received_card.date %>
-  <% end %>
-
-<% end %>
