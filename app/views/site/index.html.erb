@@ -30,7 +30,7 @@
           <table class="table-bordered table-striped">
             <tr ng-repeat="activity in activities">
               <td>
-                <b>{{activity.verb}} {{activity.relationship}} {{activity.amount}} {{activity.subject}} {{activity.interval}} </b>
+                <b>{{activity.verb}} {{activity.relationship}} {{activity.amount}} {{activity.subject}} {{activity.interval}} - {{activity.points}}pts</b>
                 <a class="btn btn-default" href="#" role="button" ng-click="deleteActivity(activity.id)">-</a>
               </td>
             </tr>
@@ -44,6 +44,8 @@
             <input type="text" placeholder="subject" id="subject" ng-model="newActivityForm.subject">
             <select id="interval" ng-options="interval_option for interval_option in interval_options" ng-model="newActivityForm.interval"> <br />
             </select>
+            <input type="text" placeholder="points" id="points" ng-model="newActivityForm.points">
+
             <div>
               <a class="btn btn-default btn-xs" href="#" role="button" ng-click="collapseActivityForm()">Cancel</a>
               <a class="btn btn-primary btn-xs" href="#" role="button" ng-click="submitActivityForm()">Submit</a>

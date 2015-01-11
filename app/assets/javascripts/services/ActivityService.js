@@ -20,7 +20,8 @@ VirtueViceApp.factory("ActivityService", this.ActivityService = function($http) 
                             relationship: newActivity.relationship,
                             amount: newActivity.amount,
                             subject: newActivity.subject,
-                            interval: newActivity.interval}).then(function(res) {
+                            interval: newActivity.interval,
+                            points: newActivity.points}).then(function(res) {
               return res.data;
             });
           }

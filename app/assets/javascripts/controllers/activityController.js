@@ -19,6 +19,7 @@ VirtueViceApp.controller('ActivityCtrl', this.ActivityCtrl = function($scope, $r
     $scope.newActivityForm.amount = "";
     $scope.newActivityForm.subject = "";
     $scope.newActivityForm.interval = "";
+    $scope.newActivityForm.points = "";
 
     $('#newActivityForm').css('display', 'none');
   };
