@@ -38,11 +38,15 @@
           <p><a class="btn btn-default" href="#" role="button" ng-click="expandActivityForm()">+</a></p>
           <form id="newActivityForm">
             <input type="text" id="verb" placeholder="Verb" ng-model="newActivityForm.verb">
-            <select  id="relationship" ng-options="relationship_option for relationship_option in relationship_options" ng-model="newActivityForm.relationship">
+            <select  id="relationship" ng-init="newActivityForm.relationship = newActivityForm.relationship || relationship_options[0]"
+                                       ng-options="relationship_option for relationship_option in relationship_options"
+                                       ng-model="newActivityForm.relationship">
             </select>
             <input type="text" id="amount" placeholder="amount" ng-model="newActivityForm.amount">
             <input type="text" placeholder="subject" id="subject" ng-model="newActivityForm.subject">
-            <select id="interval" ng-options="interval_option for interval_option in interval_options" ng-model="newActivityForm.interval"> <br />
+            <select id="interval" ng-init="newActivityForm.interval = newActivityForm.interval || interval_options[1]"
+                                  ng-options="interval_option for interval_option in interval_options"
+                                  ng-model="newActivityForm.interval"> <br />
             </select>
             <input type="text" placeholder="points" id="points" ng-model="newActivityForm.points">
 
