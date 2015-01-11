@@ -36,17 +36,19 @@
             </tr>
           </table>
           <p><a class="btn btn-default" href="#" role="button" ng-click="expandActivityForm()">+</a></p>
-          <div id="newActivityForm">
-            Verb: <input type="text" id="verb" ng-model="newActivityForm.verb"> <br />
-            Relationship: <input type="text" id="relationship" ng-model="newActivityForm.relationship"> <br />
-            Amount: <input type="text" id="amount" ng-model="newActivityForm.amount"> <br />
-            Subject: <input type="text" id="subject" ng-model="newActivityForm.subject"> <br />
-            Interval: <input type="text" id="interval" ng-model="newActivityForm.interval"> <br />
+          <form id="newActivityForm">
+            <input type="text" id="verb" placeholder="Verb" ng-model="newActivityForm.verb">
+            <select  id="relationship" ng-options="relationship_option for relationship_option in relationship_options" ng-model="newActivityForm.relationship">
+            </select>
+            <input type="text" id="amount" placeholder="amount" ng-model="newActivityForm.amount">
+            <input type="text" placeholder="subject" id="subject" ng-model="newActivityForm.subject">
+            <select id="interval" ng-options="interval_option for interval_option in interval_options" ng-model="newActivityForm.interval"> <br />
+            </select>
             <div>
               <a class="btn btn-default btn-xs" href="#" role="button" ng-click="collapseActivityForm()">Cancel</a>
               <a class="btn btn-primary btn-xs" href="#" role="button" ng-click="submitActivityForm()">Submit</a>
             </div>
-          </div>
+          </form>
         </div><!-- closing top box on first column -->
 
         <div class="col-md-11" ng-controller="TaskCtrl" id="tasks_section">

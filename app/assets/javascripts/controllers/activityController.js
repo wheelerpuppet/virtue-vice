@@ -1,7 +1,11 @@
 VirtueViceApp.controller('ActivityCtrl', this.ActivityCtrl = function($scope, $rootScope, ActivityService) {
 
   $scope.activites = [];
+
   $scope.newActivityForm = "";
+  // TODO: this should come from the server
+  $scope.relationship_options = [ 'at_least', 'at_most'];
+  $scope.interval_options = ['a_day', 'a_week', 'a_month'];
   $scope.expandActivityForm = function() {
 
     $('#newActivityForm').css('display', 'block');
@@ -20,6 +24,8 @@ VirtueViceApp.controller('ActivityCtrl', this.ActivityCtrl = function($scope, $r
   };
 
   $scope.submitActivityForm = function() {
+    console.log("form value");
+    console.log($scope.newActivityForm);
     ActivityService.addActivity($scope.newActivityForm).then(function(data) {
       console.log("Success saving new Task on server");
       $scope.updateActivities();
