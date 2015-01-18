@@ -28,7 +28,7 @@
         <div class="col-md-11" ng-controller="ActivityCtrl" id="activities_section">
           <h2>Activities</h2>
           <table class="table-bordered table-striped">
-            <tr ng-repeat="activity in activities">
+            <tr ng-repeat="activity in activities" >
               <td>
                 <b>{{activity.verb}} {{activity.relationship}} {{activity.amount}} {{activity.subject}} {{activity.interval}} - {{activity.points}}pts</b>
                 <a class="btn btn-default" href="#" role="button" ng-click="deleteActivity(activity.id)">-</a>
@@ -88,8 +88,8 @@
     <div class="col-md-4">
       <div class="row">
 
-        <div class="col-md-11">
-          <h2>Trends</h2>
+        <div class="col-md-11" id="bounties_section">
+          <h2>Bounties</h2>
           <p><a class="btn btn-default" href="#" role="button">+</a></p> COMING SOON
         </div>
 
@@ -99,16 +99,15 @@
             <tr ng-repeat="card in cards">
               <td>
                 <b>{{card.description}}</b>
+                {{card.value}}pts - {{card.category}}
                 <a class="btn btn-default" href="#" role="button" ng-click="deleteCard(card.id)">-</a>
-                <br />
-                {{card.value}} - {{card.category}}
               </td>
             </tr>
           </table>
           <p><a class="btn btn-default" href="#" role="button" ng-click="expandCardForm()">+</a></p>
           <div id="newCardForm">
             Description: <input type="text" id="name" ng-model="newCardForm.description"> <br />
-            Value: <input type="text" id="duedate" ng-model="newCardForm.value"> <br />
+            Points: <input type="text" id="duedate" ng-model="newCardForm.value"> <br />
             Category: <input type="text" id="points" ng-model="newCardForm.category"> <br />
             Recipient_id: <input type="text" id="points" ng-model="newCardForm.recipient_id"> <br />
 
@@ -127,8 +126,8 @@
     <div class="col-md-3">
       <div class="row">
 
-        <div class="col-md-11">
-          <h2>Bounties</h2>
+        <div class="col-md-11" id="trends_section">
+          <h2>Trends</h2>
           <p><a class="btn btn-default" href="#" role="button">+</a></p> COMING SOON
         </div>
 

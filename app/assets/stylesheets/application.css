@@ -29,6 +29,7 @@
 #activities_section {
   background-color: #FFFFCC;
   border: 1px solid #FFCD00;
+  margin-bottom: 10px;
 }
 
 #tasks_section {
@@ -37,7 +38,7 @@
 }
 
 #vices_section {
-  background-color: #F1CED5;
+  background-color: #AADDFF;
   border: 1px solid #BA0C2F;
 }
 
@@ -46,6 +47,19 @@
   border: 1px solid #BA0C2F;
 }
 
+#trends_section {
+  background-color: #AADDFF;
+  border: 1px solid black;
+}
+
+#bounties_section {
+  background-color: #F1CED5;
+  border: 1px solid black;
+}
 .table-striped > tbody > tr:nth-child(2n) > td, .table-striped > tbody > tr:nth-child(2n) > th {
   background-color: #EEE9E9;
+}
+
+td {
+  padding: 5px;
 }

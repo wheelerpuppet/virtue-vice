@@ -15,10 +15,10 @@ VirtueViceApp.controller('ActivityCtrl', this.ActivityCtrl = function($scope, $r
   $scope.collapseActivityForm = function() {
 
     $scope.newActivityForm.verb = "";
-    $scope.newActivityForm.relationship = "";
+    $scope.newActivityForm.relationship = "at_least";
     $scope.newActivityForm.amount = "";
     $scope.newActivityForm.subject = "";
-    $scope.newActivityForm.interval = "";
+    $scope.newActivityForm.interval = "a_week";
     $scope.newActivityForm.points = "";
 
     $('#newActivityForm').css('display', 'none');
