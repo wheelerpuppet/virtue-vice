@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :opportunities, :defaults => { :format => :json }
+
+  resources :tasks, :defaults => { :format => :json }
+
+  resources :indulgences, :defaults => { :format => :json }
+
+  resources :habits, :defaults => { :format => :json }
+
   resources :comments, :defaults => { :format => :json }
 
   resources :bounties, :defaults => { :format => :json }

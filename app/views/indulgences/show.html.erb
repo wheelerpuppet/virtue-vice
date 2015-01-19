@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Verb:</strong>
+  <%= @indulgence.verb %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @indulgence.amount %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @indulgence.subject %>
+</p>
+
+<p>
+  <strong>Interval:</strong>
+  <%= @indulgence.interval_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @indulgence.user_id %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @indulgence.points %>
+</p>
+
+<%= link_to 'Edit', edit_indulgence_path(@indulgence) %> |
+<%= link_to 'Back', indulgences_path %>

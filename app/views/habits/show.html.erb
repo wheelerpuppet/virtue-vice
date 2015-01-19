@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Verb:</strong>
+  <%= @habit.verb %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @habit.amount %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @habit.subject %>
+</p>
+
+<p>
+  <strong>Interval:</strong>
+  <%= @habit.interval_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @habit.user_id %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @habit.points %>
+</p>
+
+<%= link_to 'Edit', edit_habit_path(@habit) %> |
+<%= link_to 'Back', habits_path %>

@@ -25,34 +25,30 @@
     <div class="col-md-4">
       <div class="row">
 
-        <div class="col-md-11" ng-controller="ActivityCtrl" id="activities_section">
-          <h2>Activities</h2>
+        <div class="col-md-11" ng-controller="HabitCtrl" id="habits_section">
+          <h2>Habits</h2>
           <table class="table-bordered table-striped">
-            <tr ng-repeat="activity in activities" >
+            <tr ng-repeat="habit in habits">
               <td>
-                <b>{{activity.verb}} {{activity.relationship}} {{activity.amount}} {{activity.subject}} {{activity.interval}} - {{activity.points}}pts</b>
-                <a class="btn btn-default" href="#" role="button" ng-click="deleteActivity(activity.id)">-</a>
+                <b>{{habit.verb}} {{habit.amount}} {{habit.subject}} {{habit.interval}} - pts</b>
+                <a class="btn btn-default" href="#" role="button" ng-click="deleteHabit(habit.id)">-</a>
               </td>
             </tr>
           </table>
-          <p><a class="btn btn-default" href="#" role="button" ng-click="expandActivityForm()">+</a></p>
-          <form id="newActivityForm">
-            <input type="text" id="verb" placeholder="Verb" ng-model="newActivityForm.verb">
-            <select  id="relationship" ng-init="newActivityForm.relationship = newActivityForm.relationship || relationship_options[0]"
-                                       ng-options="relationship_option for relationship_option in relationship_options"
-                                       ng-model="newActivityForm.relationship">
-            </select>
-            <input type="text" id="amount" placeholder="amount" ng-model="newActivityForm.amount">
-            <input type="text" placeholder="subject" id="subject" ng-model="newActivityForm.subject">
-            <select id="interval" ng-init="newActivityForm.interval = newActivityForm.interval || interval_options[1]"
+          <p><a class="btn btn-default" href="#" role="button" ng-click="expandHabitForm()">+</a></p>
+          <form id="newHabitForm">
+            <input type="text" id="verb" placeholder="Verb" ng-model="newHabitForm.verb">
+            <input type="text" id="amount" placeholder="amount" ng-model="newHabitForm.amount">
+            <input type="text" placeholder="subject" id="subject" ng-model="newHabitForm.subject">
+            <select id="interval" ng-init="newHabitForm.interval = newHabitForm.interval || interval_options[1]"
                                   ng-options="interval_option for interval_option in interval_options"
-                                  ng-model="newActivityForm.interval"> <br />
+                                  ng-model="newHabitForm.interval"> <br />
             </select>
-            <input type="text" placeholder="points" id="points" ng-model="newActivityForm.points">
+            <input type="text" placeholder="points" id="points" ng-model="newHabitForm.points">
 
             <div>
-              <a class="btn btn-default btn-xs" href="#" role="button" ng-click="collapseActivityForm()">Cancel</a>
-              <a class="btn btn-primary btn-xs" href="#" role="button" ng-click="submitActivityForm()">Submit</a>
+              <a class="btn btn-default btn-xs" href="#" role="button" ng-click="collapseHabitForm()">Cancel</a>
+              <a class="btn btn-primary btn-xs" href="#" role="button" ng-click="submitHabitForm()">Submit</a>
             </div>
           </form>
         </div><!-- closing top box on first column -->

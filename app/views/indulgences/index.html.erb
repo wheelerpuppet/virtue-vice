@@ -1,0 +1,35 @@
+<h1>Listing indulgences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Verb</th>
+      <th>Amount</th>
+      <th>Subject</th>
+      <th>Interval</th>
+      <th>User</th>
+      <th>Points</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @indulgences.each do |indulgence| %>
+      <tr>
+        <td><%= indulgence.verb %></td>
+        <td><%= indulgence.amount %></td>
+        <td><%= indulgence.subject %></td>
+        <td><%= indulgence.interval_id %></td>
+        <td><%= indulgence.user_id %></td>
+        <td><%= indulgence.points %></td>
+        <td><%= link_to 'Show', indulgence %></td>
+        <td><%= link_to 'Edit', edit_indulgence_path(indulgence) %></td>
+        <td><%= link_to 'Destroy', indulgence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Indulgence', new_indulgence_path %>

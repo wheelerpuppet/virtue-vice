@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205021856) do
+ActiveRecord::Schema.define(version: 20150119043911) do
 
   create_table "activities", force: true do |t|
     t.string   "verb"
@@ -79,10 +79,42 @@ ActiveRecord::Schema.define(version: 20141205021856) do
     t.datetime "updated_at"
   end
 
+  create_table "habits", force: true do |t|
+    t.string   "verb"
+    t.integer  "amount"
+    t.string   "subject"
+    t.integer  "interval_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "penalty",     default: 0
+  end
+
+  create_table "indulgences", force: true do |t|
+    t.string   "verb"
+    t.integer  "amount"
+    t.string   "subject"
+    t.integer  "interval_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "modification_receipts", force: true do |t|
     t.integer  "new_points"
     t.integer  "activity_id"
     t.datetime "time_stamp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "new_penalty"
+  end
+
+  create_table "opportunities", force: true do |t|
+    t.string   "name"
+    t.boolean  "is_complete"
+    t.datetime "due_date"
+    t.string   "user_id"
+    t.integer  "points"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -97,12 +129,23 @@ ActiveRecord::Schema.define(version: 20141205021856) do
     t.datetime "updated_at"
   end
 
+  create_table "tasks", force: true do |t|
+    t.string   "name"
+    t.boolean  "is_complete"
+    t.datetime "due_date"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "points"
+  end
+
   create_table "users", force: true do |t|
     t.string   "login"
     t.string   "password"
     t.string   "display_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "tough_love",   default: true
   end
 
 end
